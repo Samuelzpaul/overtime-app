@@ -13,6 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# I don’t want to show my secrets
+/config/secrets.yml
+
 /node_modules
 /yarn-error.log
 
