@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:date, :rationale))
+    @post = Post.new(post_params)
 
     if @post.save
       redirect_to @post, notice: 'Your post was created successfully'
