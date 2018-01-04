@@ -36,6 +36,12 @@ describe 'navigate' do
     end
   end
 
+  describe 'delete' do
+    it 'can be deleted' do
+      
+    end
+  end
+
   describe 'creation' do
     before do
       visit new_post_path
