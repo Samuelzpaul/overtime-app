@@ -31,7 +31,7 @@ describe 'navigate' do
     it 'has a link from the homepage' do
       visit root_path
 
-      click_link("delete_post_#{@post.id}_from_index")
+      click_link("new_post_from_nav")
       expect(page.status_code).to eq(200)
     end
   end
@@ -41,7 +41,7 @@ describe 'navigate' do
       @post = FactoryGirl.create(:post)
       visit posts_path
 
-      click_link("delete_post_from_nav")
+      click_link("delete_post_#{@post.id}_from_index")
       expect(page.status_code).to eq(200)
     end
   end
@@ -74,9 +74,9 @@ describe 'navigate' do
 
   describe 'edit' do
     before do
-     @post = FactoryGirl.create(:post)
-   end
-    
+      @post = FactoryGirl.create(:post)
+    end
+
     it 'can be reached by clicking edit on index page' do
       visit posts_path
 
@@ -84,7 +84,7 @@ describe 'navigate' do
       expect(page.status_code).to eq(200)
     end
 
-    it "can be edited" do
+    it 'can be edited' do
       visit edit_post_path(@post)
 
       fill_in 'post[date]', with: Date.today
