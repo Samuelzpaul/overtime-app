@@ -7,25 +7,16 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :date, class: "col-sm-2 control-label" %> 
     <%= f.date_field :date, class: "form-control" %>  
+    <%= f.label :date, class: "col-sm-2 control-label" %> 
   </div>
 
   <div class="form-group">
-    <%= f.label :rationale, class: "col-sm-2 control-label" %>  
     <%= f.text_area :rationale, class: "form-control" %>  
+    <%= f.label :rationale, class: "col-sm-2 control-label" %>  
   </div>
 
-  <div class="form-group">
-    <%= f.radio_button :status, "submitted" %>
-    <%= f.label :status, "Submitted" %>
-
-    <%= f.radio_button :status, "approved" %>
-    <%= f.label :status, "Approved" %>
-
-    <%= f.radio_button :status, "rejected" %>
-    <%= f.label :status, "Rejected" %>
-  </div>
+  <%= render partial: 'status', locals: { f: f } if current_user.type == "Admin User" %>
   
   <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
 
