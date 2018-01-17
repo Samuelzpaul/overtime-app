@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/.env
 
 # I don’t want to show my secrets
 /config/secrets.yml
