@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     @posts = Post.posts_by(current_user).page(params[:page]).per(10)
   end
 
+  def approve
+    authorize @post
+    @post.approved!
+    redirect_to root_path, notice: "The post has been approved"
+  end
+  
   def new
     @post = Post.new
   end
