@@ -4,3 +4,4 @@ namespace :notification do
     if Time.now.sunday?
     end
   end
+end
